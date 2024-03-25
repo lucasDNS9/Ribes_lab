@@ -15,5 +15,5 @@ and another containing the values.\
 <img width="1056" alt="Structure" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/4deb61b8-b733-4245-80ef-b11ad3b4e6aa">
 The program can be run from the terminal:
 ```
-#python3 stat_test.py --data my_data.csv --groupes Groups --values Values --p 0.05
+python3 stat_test.py --data my_data.csv --groupes Groups --values Values --p 0.05
 ```
