@@ -1,5 +1,5 @@
 # Statistic tests
-This file resume the statistical analysis performed by the **stat_test.py** program.\
+This file resume the statistical analysis performed by the **stat_test.py** program.
 ### Statistical analysis
 This program allow to test whether samples originate from the same distribution. 
 The normality of the distrubutions and equality of variances are assessed. 
