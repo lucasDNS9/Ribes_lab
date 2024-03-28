@@ -9,9 +9,8 @@ Created on Thu Mar 21 17:30:24 2024
 
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from scipy.stats import kruskal, levene, f_oneway
+from scipy.stats import kruskal, levene, f_oneway, shapiro
 from scikit_posthocs import posthoc_dunn
-from scipy import stats
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import sys
 from io import StringIO
@@ -38,6 +37,9 @@ def test_stat(data, groupes, values, p=0.05):
     #allow to generate a pdf with the stat results
     output = StringIO()
     sys.stdout = output
+
+    #remove the row with NaN
+    filtered_data = data[data[values].notna()]
     
     grouped_data = data.groupby(groupes)[values].apply(list)
     
@@ -47,7 +49,7 @@ def test_stat(data, groupes, values, p=0.05):
     print('Shapiro test :')
     for x, y in grouped_data.items():
         # Perform Shapiro-Wilk test on the values within each group
-        stat_Shapiro, p_Shapiro = stats.shapiro(y)
+        stat_Shapiro, p_Shapiro = shapiro(y)
         print(f"Genotype: {x}")
         print("Test statistic:", stat_Shapiro)
         print("P-value:", p_Shapiro)
@@ -69,7 +71,7 @@ def test_stat(data, groupes, values, p=0.05):
             print('Conclusion : There is a difference between groups.\n')
             print("We perform the post-hoc Dunn's test :")
             
-            dunn_results = posthoc_dunn(data, val_col=values, group_col=groupes)
+            dunn_results = posthoc_dunn(filtered_data, val_col=values, group_col=groupes)
             print("Dunn's Test results :")
             print(dunn_results)
         
@@ -100,7 +102,7 @@ def test_stat(data, groupes, values, p=0.05):
                 print('Conclusion : There is a differences between groups.\n')
                 print("We perform the post-hoc Dunn's test :")
                 
-                dunn_results = posthoc_dunn(data, val_col=values, group_col=groupes)
+                dunn_results = posthoc_dunn(filtered_data, val_col=values, group_col=groupes)
                 print("Dunn's Test results :")
                 print(dunn_results)
             
@@ -122,14 +124,14 @@ def test_stat(data, groupes, values, p=0.05):
                 print('We perform a Tukey post-hoc test :')
                 
                 # Perform Tukey post-hoc test
-                tukey_results = pairwise_tukeyhsd(data[values], data[groupes])
+                tukey_results = pairwise_tukeyhsd(filtered_data[values], filtered_data[groupes])
                 print("Tukey HSD results :")
                 print(tukey_results)
             
             else:
                 print("Conclusion : There is no significant difference between group means.\n")
     
-    group_counts = data[groupes].value_counts()
+    group_counts = filtered_data[groupes].value_counts()
     # Display unique groups and their counts
     print('number of n:')
     print(group_counts)
