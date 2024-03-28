@@ -74,7 +74,7 @@ def test_stat(data, groupes, values, p=0.05):
             print(dunn_results)
         
         else :
-            print('Conclusion : There is no statistical differences between groups')
+            print('Conclusion : There is no statistical differences between groups.\n')
 
     else : #test the homogeneity of the variance across group
         print('Conclusion : The data are normaly distributed.\n')
@@ -105,7 +105,7 @@ def test_stat(data, groupes, values, p=0.05):
                 print(dunn_results)
             
             else :
-                print('Conclusion : There is no statistical differences between groups')
+                print('Conclusion : There is no statistical differences between groups.\n')
 
         else:
             print("Conclusion : Variances are equal.\n")
@@ -127,8 +127,12 @@ def test_stat(data, groupes, values, p=0.05):
                 print(tukey_results)
             
             else:
-                print("Conclusion : There is no significant difference between group means.")
-
+                print("Conclusion : There is no significant difference between group means.\n")
+    
+    group_counts = data[groupes].value_counts()
+    # Display unique groups and their counts
+    print('number of n:')
+    print(group_counts)
 
     #Get the printed output as a string
     output_text = output.getvalue()
