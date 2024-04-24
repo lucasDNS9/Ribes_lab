@@ -10,7 +10,8 @@ The data files need to have the following structure:
 The first column is containing the gene symbols, the next ones are containing the read counts for the differnet samples from the two conditions you want to compare.
 
 ### Metadata files
-The metadata files need to have the following structure:\\
+The metadata files need to have the following structure:
+
 <img width="242" alt="metadata" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/21a6c254-3bfe-491d-9199-364966c9d993">
 
 The first column contains the labels of the different samples and the second column thei associated group (the two groups you want to compare). The *reference group* (the control for exemple) need to be the first group provided in the metadata file.
