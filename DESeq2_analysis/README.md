@@ -7,7 +7,7 @@ For each comparison, you need to prepare two files, one with the data and anothe
 The data files need to have the following structure:  
 <img width="929" alt="data" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/070c3667-ec54-481c-afea-fdcca9194589">
 
-The first column is containing the gene symbols, the next ones are containing the read counts for the different samples from the two conditions you want to compare.
+The first column is containing the gene symbols, the next ones are containing the read counts for the different samples from the two conditions you want to compare. It's important to store the file as a a .txt file (
 
 ### Metadata files
 The metadata files need to have the following structure:  
@@ -31,3 +31,8 @@ The data files and metadata files need to be in the same order in their respecti
 ```
 Rscript DESeq2_analysis.R /path/to/data_folder /path/to/metadata_folder
 ```
+## How to interpret the results ?
+You will get a .csv file as a results. The name of the file indicate the order of the comparaison: group_2_vs_group_ref.csv means that the group_2 is compared to the group_ref that is consired as the reference group (or control). The fold change is calculated as follow:  
+  
+$$fold_change=\log^2{group_2\over group_ref}$$
+
