@@ -5,6 +5,7 @@ This document describe the use of DESeq2_analysis.R program. DESeq2 analysis is 
 For each comparison, you need to prepare two files, one with the data and another with the metadata that will be stored in different folders.
 ### Data files
 The data files need to have the following structure:
+
 <img width="929" alt="data" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/070c3667-ec54-481c-afea-fdcca9194589">
 
 The first column is containing the gene symbols, the next ones are containing the read counts for the differnet samples from the two conditions you want to compare.
