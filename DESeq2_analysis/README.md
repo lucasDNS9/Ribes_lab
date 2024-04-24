@@ -34,5 +34,5 @@ Rscript DESeq2_analysis.R /path/to/data_folder /path/to/metadata_folder
 ## How to interpret the results ?
 You will get a .csv file as a results. The name of the file indicate the order of the comparaison: group_2_vs_group_ref.csv means that the group_2 is compared to the group_ref that is consired as the reference group (or control). The fold change is calculated as follow:  
   
-$$fold_change=\log^2{group_2\over group_ref}$$
+$$\text{fold_change}=\log^2{(\text{group_2}\over \text{group_ref}}$$
 
