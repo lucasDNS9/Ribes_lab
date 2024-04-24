@@ -16,11 +16,18 @@ The metadata files need to have the following structure:
 The first column contains the labels of the different samples and the second column their associated group (the two groups you want to compare). The *reference group* (the control for exemple) need to be the first group provided in the metadata file.
 
 ## How to run the code ?
-The data files and metadata files need to be in the same order in their respective folder such as:
-    data_folder > data_1.txt    metadata_folder > metadata_1.txt  
-                > data_2.txt                    > metadata_2.txt  
-                > data_3.txt                    > metadata_3.txt
+The data files and metadata files need to be in the same order in their respective folder such as:  
+*data_folder*  
+> data_1.txt   
+> data_2.txt
+> data_3.txt
+  
+*metadata_folder*  
+> metadata_1.txt   
+> metadata_2.txt  
+> metadata_3.txt
 
+**Then you can run this command line from the terminal:**
 ```
-Rscript DESeq2_analysis.R /path/to/data_folder /path/to/metadata_folderD
+Rscript DESeq2_analysis.R /path/to/data_folder /path/to/metadata_folder
 ```
