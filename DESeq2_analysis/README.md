@@ -17,12 +17,12 @@ The first column contains the labels of the different samples and the second col
 
 ## How to run the code ?
 The data files and metadata files need to be in the same order in their respective folder such as:  
-*data_folder*  
+**data_folder**  
 > data_1.txt   
-> data_2.txt
+> data_2.txt  
 > data_3.txt
   
-*metadata_folder*  
+**metadata_folder**  
 > metadata_1.txt   
 > metadata_2.txt  
 > metadata_3.txt
