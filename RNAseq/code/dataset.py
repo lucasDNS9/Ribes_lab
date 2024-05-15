@@ -10,7 +10,6 @@ os.chdir('/Users/lucasdenis/Desktop/RNAseq/code')
 
 import pandas as pd
 from filtering import filter_fpkm, filter_pvalue_fc
-from visualization import volcano_plot
 
 #import dataset
 RNAseq_data = pd.read_csv('./datasets/RNAseq_data.csv', sep=';', decimal='.')
