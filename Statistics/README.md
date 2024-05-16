@@ -17,3 +17,5 @@ The program can be run from the terminal:
 ```
 python3 stat_test.py --data my_data.csv --groupes Groups --values Values --p 0.05
 ```
+#Special Warning
+Be careful to the sign you used to delimitate the columns in your dataframe. Need to be ';'
