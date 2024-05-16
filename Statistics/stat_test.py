@@ -157,7 +157,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Load data from CSV file
-    data = pd.read_csv(args.data)
+    data = pd.read_csv(args.data, sep=';')
     
     # Call your function with the provided arguments
     test_stat(data, args.groupes, args.values, args.p)
