@@ -7,7 +7,7 @@ Created on Fri May  3 10:26:18 2024
 """
 ###############################################################################
 '''
-set working directory, import packages, functions and dataset
+Section 1: set working directory, import packages, functions and dataset
 '''
 
 #define working directory (containing the filtering.py file (with filtering functions))
@@ -23,7 +23,7 @@ RNAseq_data = pd.read_csv('/Users/lucasdenis/Desktop/RNAseq/datasets/RNAseq_data
 
 ###############################################################################
 '''
-Dataset organization and subset (column filtering)
+Section 2: Dataset organization and subset (column filtering)
 '''
 
 #define the dataset row indexes
@@ -46,7 +46,7 @@ RNAseq_PAX3_NO = RNAseq_NO[[col for col in RNAseq_NO.columns if 'BMP' not in col
 
 ###############################################################################
 '''
-Rows Filtering (1={fpkm}, 2={fpkm + pvalue + fold change})
+Section 3: Rows Filtering (1={fpkm}, 2={fpkm + pvalue + fold change})
 '''
 #filter on fpkm (genes with at least on fpkm > fpkm_threshold remain)
 
@@ -66,9 +66,8 @@ RNAseq_d7_filtered.to_csv('RNAseq_d7_fpkm_filt.csv')
 RNAseq_PAX3_BMP_1.to_csv('RNAseq_PAX3_BMP_fpkm_filt.csv')
 RNAseq_PAX3_NO_1.to_csv('RNAseq_PAX3_NO_fpkm_filt.csv')
 
-###
 
-#filter on p-value and fold change
+###filter on p-value and fold change
 
 #Differentially Expressed Genes (DEGs) in BMP conditon
 RNAseq_PAX3_BMP_2 = filter_pvalue_fc(RNAseq_PAX3_BMP_1,pvalue_threshold=0.01, fc_threshold=1.5)
