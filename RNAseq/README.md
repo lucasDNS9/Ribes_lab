@@ -14,4 +14,13 @@ This section called the functions define in filtering.py file to filter on fpkm 
 The intermediate dataset are saved, the ones with with only fpkm filtering are used for PCA plots (cf PCA.py) or volcano plots (cf volcano.py), the DEGs datasets are used to draw heatmaps.
 
 ## filtering.py
-This code define the filtering functions used to filter the rows of RNAseq dataset
+This code define the filtering functions used to filter the rows of RNAseq dataset.
+#### filter_fpkm function
+Function to filter on minimal fpkm values.
+#### filter_pvalue function
+
+#### filter_fc function
+
+#### filter_pvalue_fc function
+
+
