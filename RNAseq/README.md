@@ -61,7 +61,12 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
 - Define the gene names as the row indexes.
 - Logarithmic transformationof the fpkm values: improve the graphical representation
 #### Section 2: Graphical functions
-- 
+- Import packages (pyplot from matplotlib and decomposition from scikit-learn)
+- Define scree_plot function. This function draw a scree plot (contribution of the different composant from the PCA), that look like that: [scree_plot_d7.pdf](https://github.com/user-attachments/files/16163671/scree_plot_d7.pdf). function: scree_plot(data, subset, title=None):
+  - data: dataset containing fpkm values
+  - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
+  - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified name (title=None by default).
+- Define PCA function. 
 ### Section 3: Graphs
 
 
