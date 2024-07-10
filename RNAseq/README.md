@@ -50,13 +50,18 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
 #### Section 1: Data preprocessing
 - Import required packages
 - Define working directory (folder containing the datasets to import)
-- Import the datasets containing the data filtered on fpkm values (previously saved from dataset.py), namely the whole dataset and only the data at day 7 (represented in the graph above). The datasets contains a column with gene names and columns with fpkm for each conditions as follow: \
+- Import the datasets containing the data filtered on fpkm values (previously saved from dataset.py), namely the whole dataset and only the data at day 7 (represented in the graph above). The datasets contains a column with gene names and columns with fpkm for each conditions as follow:
+  
 <img width="1081" alt="Capture d’écran 2024-07-10 à 15 59 48" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6f453862-2d82-4135-8668-499e255ad54f"> 
-- Import a dataset containing the association between samples and condition groups, as follow: \
-<img width="299" alt="Capture d’écran 2024-07-10 à 16 06 15" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6e0d6739-c8f9-4972-a087-6bd14290e966"> 
+
+- Import a dataset containing the association between samples and condition groups, as follow:
+  
+<img width="299" alt="Capture d’écran 2024-07-10 à 16 06 15" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6e0d6739-c8f9-4972-a087-6bd14290e966">
+
 - Define the gene names as the row indexes.
 - Logarithmic transformationof the fpkm values: improve the graphical representation
 #### Section 2: Graphical functions
+- 
 ### Section 3: Graphs
 
 
