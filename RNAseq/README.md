@@ -46,6 +46,8 @@ Specificity: The function will check both p-values and fold-change at the same t
 
 ## PCA.py
 This code was used to do a Principal Component Analysis (PCA) from RNAseq data and draw the following graph.
+[PCA_d7.pdf](https://github.com/user-attachments/files/16163061/PCA_d7.pdf)
+
 
 #### Section 1: Data preprocessing
 #### Section 2: Graphical functions
