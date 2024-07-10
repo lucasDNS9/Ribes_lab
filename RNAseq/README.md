@@ -74,10 +74,16 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
   - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified title (title=None by default)
 In the PCA function is defined two dictionnaries that are used to improve graphic epresentation: color_mapping that map condition groups with a color (here the genotype), and shape_mapping that map condition groups to a shape (here the presence of abscence of BMP). Those two dictionnaries and the way they map the different conditions to color and shape need to be adjusted to the specificities of your dataset.
 #### Section 3: Graphs
-Application of the functions scree_plot and plot_PCA.
+Application of the functions scree_plot() and plot_PCA().
 
 ## volcano.py
-This code was used to draw volcano plots from RNAseq data. 
+This code was used to draw volcano plots from RNAseq data.
+#### Section 1: Data preprocessing
+- import required packages
+- define working directory
+- Import the datasets containing the data filtered on fpkm values (previously saved from dataset.py), with gene names, fpkm for each condition, p-values and fold-changes for the different comparisons. Here two datasets : the gene regulated by PAX3 (PAX3 DEGs) in the two conditions with and without BMP.
+- Define the gene names as the row indexes.
+#### Section 2: 
 
 
 
