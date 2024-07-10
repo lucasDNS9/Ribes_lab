@@ -45,7 +45,7 @@ Arguments:
 Specificity: The function will check both p-values and fold-change at the same time for each rows. If there is several comparisons to check, the p-value columns and fold-change columns need to be in the same order : comparison_1 > comparison_2 > comparison_3. Cf. table organization presented above.
 
 ## PCA.py
-This code was used to do a Principal Component Analysis (PCA) from RNAseq data and draw the following graph.
+This code was used to do a Principal Component Analysis (PCA) from RNAseq data and draw the following graph:
 [PCA_d7.pdf](https://github.com/user-attachments/files/16163061/PCA_d7.pdf)
 
 
