@@ -47,9 +47,12 @@ Specificity: The function will check both p-values and fold-change at the same t
 ## PCA.py
 This code was used to do a Principal Component Analysis (PCA) from RNAseq data and draw the following graph:
 [PCA_d7.pdf](https://github.com/user-attachments/files/16163061/PCA_d7.pdf)
-
-
 #### Section 1: Data preprocessing
+- Import required packages
+- Define working directory (folder containing the datasets to import)
+- Import datasets: the datasets containing the data filtered on fpkm values (previously saved from dataset.py), namely the whole dataset and only the data at day 7 (represented in the graph above). The datasets contains a column with gene names and columns with fpkm for each conditions as follow:
+<img width="1081" alt="Capture d’écran 2024-07-10 à 15 59 48" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6f453862-2d82-4135-8668-499e255ad54f">
+
 #### Section 2: Graphical functions
 ### Section 3: Graphs
 
