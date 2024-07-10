@@ -70,7 +70,7 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
   - data: dataset containing fpkm values (filtered on minimal fpkm)
   - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
   - sample_groupe: dataset containing the association between samples and condition group (previously imported as sample_groupe)
-  - n_components: number of principal components (PC) to include in the PCA, default value is 2 (but you can change to higher number to have in addition to a graph a table with the contribution of the different PC for each samples.
+  - n_components: number of principal components (PC) to include in the PCA, the default value is 2, the graph will always display 2 components but you can change to higher number to have in addition to the graph a table with the contribution more PC for each samples.
   - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified title (title=None by default)
 In the PCA function is defined two dictionnaries that are used to improve graphic epresentation: color_mapping that map condition groups with a color (here the genotype), and shape_mapping that map condition groups to a shape (here the presence of abscence of BMP). Those two dictionnaries and the way they map the different conditions to color and shape need to be adjusted to the specificities of your dataset.
 #### Section 3: Graphs
