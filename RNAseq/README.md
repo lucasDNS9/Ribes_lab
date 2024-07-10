@@ -29,7 +29,7 @@ Function to filter the rows on a maximal p-value. It keeps the rows if at least 
 Function to filter the rows on a minimal fold-change. It keeps the rows if at least one of the fold-change from specified columns is greater than the fold-change threshold or lower than 1/{fold-change threshold}. This function is not use in the main code. Arguments:
 - data: dataset containing the genes, fpkm values, and DESeq results (p-values and fold-changes)
 - fc_threshold: fold-change threshold (usually 1.5)
-- subset: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes).
+- subset: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes)\
 Special Warning: the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
 #### filter_pvalue_fc(data, pvalue_threshold, fc_threshold, subset_p='padj', subset_fc='log2fc')
 This function filter the rows if both the p-value and fold-change of one of the comparisons meet the selection criteria. This function is better to extract the differentially expressed genes compared to the successive use of the two previous functions. Arguments:
@@ -37,9 +37,8 @@ This function filter the rows if both the p-value and fold-change of one of the 
 - pvalue_threshold: maximale p-value (for example 0.01)
 - fc_threshold: fold-change threshold (usually 1.5), keep the row if at least one of the fold-change from specified columns is greater than the fold-change threshold or lower than 1/{fold-change threshold}. It's important to notice that the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
 - subset_p: string of character contained in the name of the p-values columns to check. Here, I selected 'padj' as default (all columns containins the adjusted p-values)
-- subset_fc: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes)
-Specificity:
-
+- subset_fc: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes)\
+Specificity: The function will check both p-values and fold-change at the same time for each rows. If there is several comparisons to check, the p-value columns and fold-change columns need to be in the same order : comparison_1 > comparison_2 > comparison_3. Cf. table organization presented above.
 
 ## PCA.py
 
