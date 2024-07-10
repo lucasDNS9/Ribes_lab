@@ -54,7 +54,7 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
   
 <img width="1081" alt="Capture d’écran 2024-07-10 à 15 59 48" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6f453862-2d82-4135-8668-499e255ad54f"> 
 
-- Import a dataset containing the association between samples and condition groups, as follow:
+- Import a dataset containing the association between samples and condition groups, it's important to keep the structure as follow:
   
 <img width="299" alt="Capture d’écran 2024-07-10 à 16 06 15" src="https://github.com/lucasDNS9/Ribes_lab/assets/127426611/6e0d6739-c8f9-4972-a087-6bd14290e966">
 
@@ -63,11 +63,17 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
 #### Section 2: Graphical functions
 - Import packages (pyplot from matplotlib and decomposition from scikit-learn)
 - Define scree_plot function. This function draw a scree plot (contribution of the different composant from the PCA), that look like that: [scree_plot_d7.pdf](https://github.com/user-attachments/files/16163671/scree_plot_d7.pdf). function: scree_plot(data, subset, title=None):
-  - data: dataset containing fpkm values
+  - data: dataset containing fpkm values (filtered on minimal fpkm)
   - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
-  - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified name (title=None by default).
-- Define PCA function. 
-### Section 3: Graphs
+  - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified title (title=None by default).
+- Define PCA function, plot_PCA(data, subset, sample_group, n_components=2, title=None):
+  - data: dataset containing fpkm values (filtered on minimal fpkm)
+  - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
+  - sample_groupe: dataset containing the association between samples and condition group (previously imported as sample_groupe)
+  - n_components: number of principal components (PC) to include in the PCA, default value is 2 (but you can change to higher number to have in addition to a graph a table with the contribution of the different PC for each samples.
+  - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified title (title=None by default)
+In the PCA function is defined two dictionnaries that are used to improve graphic epresentation: color_mapping that map condition groups with a color (here the genotype), and shape_mapping that map condition groups to a shape (here the presence of abscence of BMP). Those two dictionnaries and the way they map the different conditions to color and shape need to be adjusted to the specificities of your dataset.
+#### Section 3: Graphs
 
 
 
