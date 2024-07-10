@@ -26,9 +26,12 @@ Function to filter the rows on a maximal p-value. It keeps the rows if at least 
 - pvalue_threshold: maximale p-value (for example 0.01)
 - subset: string of character contained in the name of the p-values columns to check. Here, I selected 'padj' as default (all columns containins the adjusted p-values).
 #### filter_fc(data, fc_threshold, subset='log2fc')
-Function to filter the rows on a minimal fold-change. It keeps the rows if at least one of the fold-change from specified columns is greater than the fold-change threshold or lower than ...
-
-#### filter_pvalue_fc function
+Function to filter the rows on a minimal fold-change. It keeps the rows if at least one of the fold-change from specified columns is greater than the fold-change threshold or lower than 1/{fold-change threshold}. This function is not use in the main code. Arguments:
+- data: dataset containing the genes, fpkm values, and DESeq results (p-values and fold-changes).
+- fc_threshold: fold-change threshold (usually 1.5)
+- subset: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes).
+Special Warning: the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
+#### filter_pvalue_fc(data, pvalue_threshold, fc_threshold, subset_p='padj', subset_fc='log2fc')
 
 ## PCA.py
 
