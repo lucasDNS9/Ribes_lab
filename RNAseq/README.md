@@ -15,11 +15,16 @@ The intermediate dataset are saved, the ones with with only fpkm filtering are u
 
 ## filtering.py
 This code define the filtering functions used to filter the rows of RNAseq dataset.
-#### filter_fpkm function
-Function to filter on minimal fpkm values.
+#### filter_fpkm(data, fpkm_threshold, subset='average_fpkm_'):
+Function to filter the rows on a minimal fpkm value. It keeps the rows if at least one of the fpkm values is greater than the specified fpkm threshold. Arguments:
+- data: dataset containing the genes, fpkm values, and DESeq results (p-values and fold-changes)
+- fpkm_threshold: minimal fpkm value (usually 1)
+- subset: string of character contained in the name of the fpkm columns to check. Here, I selected 'average_fpkm_' as default (average per conditions). It can be change to fpkm_ to select fpkm columns of every samples.
 #### filter_pvalue function
-
+Function to filter the rows on a maximal p-value. Arguments:
+- data
 #### filter_fc function
+Function to filter the rows on a minimal fold-change. The selection is 
 
 #### filter_pvalue_fc function
 
