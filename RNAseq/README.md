@@ -62,11 +62,11 @@ This code was used to do a Principal Component Analysis (PCA) from RNAseq data a
 - Logarithmic transformationof the fpkm values: improve the graphical representation
 #### Section 2: Graphical functions
 - Import packages (pyplot from matplotlib and decomposition from scikit-learn)
-- Define scree_plot function. This function draw a scree plot (contribution of the different composant from the PCA), that look like that: [scree_plot_d7.pdf](https://github.com/user-attachments/files/16163671/scree_plot_d7.pdf). function: scree_plot(data, subset, title=None):
+- Define **scree_plot** function. This function draw a scree plot (contribution of the different composant from the PCA), that look like that: [scree_plot_d7.pdf](https://github.com/user-attachments/files/16163671/scree_plot_d7.pdf). function: **scree_plot(data, subset, title=None)**:
   - data: dataset containing fpkm values (filtered on minimal fpkm)
   - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
   - title: if a title is specified such as title='title.pdf', the graph will be saved with the specified title (title=None by default).
-- Define PCA function, plot_PCA(data, subset, sample_group, n_components=2, title=None):
+- Define PCA function, **plot_PCA(data, subset, sample_group, n_components=2, title=None)**:
   - data: dataset containing fpkm values (filtered on minimal fpkm)
   - subset: string of character contained in the name of the fpkm columns (usually 'fpkm_')
   - sample_groupe: dataset containing the association between samples and condition group (previously imported as sample_groupe)
@@ -83,7 +83,18 @@ This code was used to draw volcano plots from RNAseq data.
 - define working directory
 - Import the datasets containing the data filtered on fpkm values (previously saved from dataset.py), with gene names, fpkm for each condition, p-values and fold-changes for the different comparisons. Here two datasets : the gene regulated by PAX3 (PAX3 DEGs) in the two conditions with and without BMP.
 - Define the gene names as the row indexes.
-#### Section 2: 
+#### Section 2: Functions
+- Define **select_comp()** function. This function extract the data required to draw the volcano plot for only one comparison, namely the columns containing the adjusted p-value ('padj') and the fold-change ('log2fc) of the specified comparisons, this can be change if necessary. This function is use in the volcano plot function. Function: **select_comp(data, condition_1, condition_2)**:
+  - data: dataset containing fpkm values (filtered on minimal fpkm)
+  - condition_1: the first condition we want to compare
+  - condition_2: the second condition we want to compare (the order between condition 1 and 2 does not matter, the order of the comparison during DESeq analysis.
+- Define **gene_extraction()** function. This function extract the Differentially Expressed Genes (DEGs) from a single comparison. It can be used separetely from the other functions but it's used in the volcano plot function. Function: **gene_extraction(data, condition_1, condition_2, fc_threshold, pvalue_threshold, save=False** :
+  - data: dataset containing the p-values and fold-changes for one comparisons (the gene names are set as the row indexes), this table is generate with the previous **select_comp()** function, it's taken into account so the dataset can contains other information before using this function
+  - conditions_1: the first condition we want to compare
+  - condition_2: the second condition we want to compare (the order between condition 1 and 2 does not matter
+  - fc_threshold: fold-change threshold (usually 1.5), the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
+  - pvalue_threshold: maximale p-value (for example 0.01)
+  - save: if save=True, a .csv file is saved with a list of DEGs and their associated p-values and fold-changes from the specified comparison.
 
 
 
