@@ -95,6 +95,6 @@ This code was used to draw volcano plots from RNAseq data.
   - fc_threshold: fold-change threshold (usually 1.5), the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
   - pvalue_threshold: maximale p-value (for example 0.01)
   - save: if save=True, a .csv file is saved with a list of DEGs and their associated p-values and fold-changes from the specified comparison.
-
+- Define **volcano_plot()** function. 
 
 
