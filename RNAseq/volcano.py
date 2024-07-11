@@ -67,7 +67,7 @@ def gene_extraction(data, condition_1, condition_2, fc_threshold,
 ###############################################################################
 #Volcano plot function
 def volcano_plot(data, condition_1, condition_2, fc_threshold, 
-                 pvalue_threshold=0.01, label=False, save=False, pdf=False):
+                 pvalue_threshold=0.01, save=False, pdf=False):
     
     #select data for the comparison (with the select_comp function)
     comp = select_comp(data, condition_1, condition_2)
@@ -116,9 +116,6 @@ def volcano_plot(data, condition_1, condition_2, fc_threshold,
     plt.axvline(x=fc_lim_log2, color='blue', linestyle='--', linewidth=1, 
                 label='Fold Change Threshold: '+str((fc_threshold)))
     plt.axvline(x=-fc_lim_log2, color='blue', linestyle='--', linewidth=1)
-
-    # Add legend
-    #plt.legend()
     
     if pdf:
         plt.savefig(str(condition_1)+'_vs_'+str(condition_2)+'.pdf', format='pdf')
@@ -130,33 +127,33 @@ Section 3: Volcano plots (important to give data already filtered for fpkm value
 #BMP hom vs ctl
 volcano_plot(RNAseq_PAX3_BMP_filt_fpkm, condition_1='hom_BMP_D7', 
              condition_2='ctl_BMP_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=True, save=False)
+             pdf=True, save=False)
 
 #BMP het vs ctl
 volcano_plot(RNAseq_PAX3_BMP_filt_fpkm, condition_1='het_BMP_D7', 
              condition_2='ctl_BMP_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=True, save=False)
+             pdf=True, save=False)
 
 #BMP hom vs het
 volcano_plot(RNAseq_PAX3_BMP_filt_fpkm, condition_1='hom_BMP_D7', 
              condition_2='het_BMP_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=False, save=False)
+             pdf=False, save=False)
 
 
 #NO BMP hom vs ctl
 volcano_plot(RNAseq_PAX3_NO_filt_fpkm, condition_1='hom_NO_D7', 
              condition_2='ctl_NO_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=True, save=False)
+             pdf=True, save=False)
 
 #NO BMP het vs ctl
 volcano_plot(RNAseq_PAX3_NO_filt_fpkm, condition_1='het_NO_D7', 
              condition_2='ctl_NO_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=True, save=False)
+             pdf=True, save=False)
     
 #NO BMP hom vs het
 volcano_plot(RNAseq_PAX3_NO_filt_fpkm, condition_1='hom_NO_D7', 
              condition_2='het_NO_D7', fc_threshold=1.5, pvalue_threshold=0.01,
-             label=False, pdf=False, save=False)
+             pdf=False, save=False)
 
 
 
