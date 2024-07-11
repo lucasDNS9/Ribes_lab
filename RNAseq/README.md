@@ -91,17 +91,19 @@ This code was used to draw volcano plots from RNAseq data.
 - Define **gene_extraction()** function. This function extract the Differentially Expressed Genes (DEGs) from a single comparison. It can be used separetely from the other functions but it's used in the volcano plot function. Function: **gene_extraction(data, condition_1, condition_2, fc_threshold, pvalue_threshold, save=False** :
   - data: dataset containing the p-values and fold-changes for one comparisons (the gene names are set as the row indexes), this table is generate with the previous **select_comp()** function, it's taken into account so the dataset can contains other information before using this function
   - conditions_1: the first condition we want to compare
-  - condition_2: the second condition we want to compare (the order between condition 1 and 2 does not matter
+  - condition_2: the second condition we want to compare (the order between condition 1 and 2 does not matter)
   - fc_threshold: fold-change threshold (usually 1.5), the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
   - pvalue_threshold: maximale p-value (for example 0.01)
   - save: if save=True, a .csv file is saved with a list of DEGs and their associated p-values and fold-changes from the specified comparison.
-- Define **volcano_plot()** function. This function is used to represent the p-value and fold-change of each genes and highlight the one that are differentially expressed between two conditions, for example: [volcano.pdf](https://github.com/user-attachments/files/16179792/hom_BMP_D7_vs_ctl_BMP_D7.pdf). Function: **volcano_plot(data, condition_1, condition_2, fc_threshold, pvalue_threshold=0.01, label=False, save=False, pdf=False)**:
-  - data:
-  - condition_1
-  - condition_2
-  - fc_threshold:
-  - pvalue-threshold:
-  - label:
-  - 
+- Define **volcano_plot()** function. This function is used to represent the p-value and fold-change of each genes and highlight the one that are differentially expressed between two conditions, for example: [volcano.pdf](https://github.com/user-attachments/files/16179792/hom_BMP_D7_vs_ctl_BMP_D7.pdf). Function: **volcano_plot(data, condition_1, condition_2, fc_threshold, pvalue_threshold=0.01, save=False, pdf=False)**:
+  - data: dataset containing the p-values and fold-changes for one comparisons (the gene names are set as the row indexes), this table is generate with the previous **select_comp()** function, it's taken into account so the dataset can contains other information before using this function
+  - condition_1: the first condition we want to compare
+  - condition_2: the second condition we want to compare (the order between condition 1 and 2 does not matter)
+  - fc_threshold: fold-change threshold (usually 1.5), the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
+  - pvalue-threshold: maximale p-value (for example 0.01)
+  - save: if save=True, it saves a pdf with the gene differentially expressed (DEGs, highlighted in the graph).
+  - pdf: if pdf=True, it saves a pdf with the graph.
+#### Section 3: Generate the Volcano plots
+Exemples of how the function has beed used to generate the volcano plots
 
 
