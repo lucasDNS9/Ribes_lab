@@ -95,6 +95,13 @@ This code was used to draw volcano plots from RNAseq data.
   - fc_threshold: fold-change threshold (usually 1.5), the DESeq analysis gives fold-changes as $log2(fold change)$, this specificity is taken into account in the function. If it's not the case in your dataset, you need to adjuste this function.
   - pvalue_threshold: maximale p-value (for example 0.01)
   - save: if save=True, a .csv file is saved with a list of DEGs and their associated p-values and fold-changes from the specified comparison.
-- Define **volcano_plot()** function. 
+- Define **volcano_plot()** function. This function is used to represent the p-value and fold-change of each genes and highlight the one that are differentially expressed between two conditions, for example: [volcano.pdf](https://github.com/user-attachments/files/16179792/hom_BMP_D7_vs_ctl_BMP_D7.pdf). Function: **volcano_plot(data, condition_1, condition_2, fc_threshold, pvalue_threshold=0.01, label=False, save=False, pdf=False)**:
+  - data:
+  - condition_1
+  - condition_2
+  - fc_threshold:
+  - pvalue-threshold:
+  - label:
+  - 
 
 
