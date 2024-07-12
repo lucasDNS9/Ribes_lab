@@ -57,7 +57,8 @@ This function associate the chromatin regions (from the DORs list) and the two c
 #### Section 3: Application of the function
 Apply the function the the DORs from the differents comparisons and save the results as new tables.
 
-## 
+## timecomp.py
+
 
 
 
