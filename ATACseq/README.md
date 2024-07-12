@@ -58,7 +58,12 @@ This function associate the chromatin regions (from the DORs list) and the two c
 Apply the function the the DORs from the differents comparisons and save the results as new tables.
 
 ## timecomp.py
-
+#### Section 1: Import
+- Import required packages
+- Define working directory
+- Import datasets containing the Differentially Open Regions (DORs) between timepoints (Wild-types between iPSCs at day 0 and organoids at day 4 and day 7). These datasets are generated with the code dataset.py and filtering.py (cf. above)
+- Define the list of columns (their names) containing the p-values of the different time-comparisons and fold-change of the different time-comparisons (they have to be in the same order: comparison_1 > comparison_2 > comparison_3). This has to be adapted to the specificities of your dataset.
+#### Section 2: Classification function
 
 
 
