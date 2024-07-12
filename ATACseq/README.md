@@ -1,5 +1,6 @@
 # ATACseq analysis
 This document explain how to use the python code for RNAseq analysis. It's indicated when it's necesseray to adapte the code to the specificity of your dataset. The datasets used in the analysis are available on the laboratory storage.
+
 ## dataset.py
 #### Section 1: import
 - import pandas package, and filtering functions (from filtering.py file)
@@ -42,4 +43,23 @@ Arguments:
 - subset_p: string of character contained in the name of the p-values columns to check. Here, I selected 'padj' as default (all columns containins the adjusted p-values)
 - subset_fc: string of character contained in the name of the fold-change columns to check. Here, I selected 'log2fc' as default (all columns containins the log2 of fold-changes)\
 Specificity: The function will check both p-values and fold-change at the same time for each rows. If there is several comparisons to check, the p-value columns and fold-change columns need to be in the same order : comparison_1 > comparison_2 > comparison_3. Cf. table organization presented above.
+
+## regions_to_genes.py
+#### Section 1: Import
+- Import packages
+- Define working directory
+- Import the table with the associations between a chroomatin regions and the two closest genes. Organization of this table with a column 'chrom:start-end' as the row indexes.
+- Import the datasets containings the Differentially Open Regions (DORs) extract with the filtering functions.
+#### Section 2: Define the function
+This function associate the chromatin regions (from the DORs list) and the two closest genes using the association table. It generate a new dataset with the region locations, the rpkm values and DESeq results (p-value and fold-change), and the closests genes. Function: **region_to_gene(data_association, data_DORs)**. \
+ - data_association: dataset associating chromatin region and two closest genes (2closest_atac.bed)
+ - data_DORs: datasets containing the location of the DORs
+#### Section 3: Application of the function
+Apply the function the the DORs from the differents comparisons and save the results as new tables.
+
+## 
+
+
+
+
 
