@@ -64,7 +64,12 @@ Apply the function the the DORs from the differents comparisons and save the res
 - Import datasets containing the Differentially Open Regions (DORs) between timepoints (Wild-types between iPSCs at day 0 and organoids at day 4 and day 7). These datasets are generated with the code dataset.py and filtering.py (cf. above)
 - Define the list of columns (their names) containing the p-values of the different time-comparisons and fold-change of the different time-comparisons (they have to be in the same order: comparison_1 > comparison_2 > comparison_3). This has to be adapted to the specificities of your dataset.
 #### Section 2: Classification function
-
+The function classifies each DORs into one 'profil of opening' according to the results of DESeq analysis between the different timepoint comparisons. For each comparisons, the function check wheter theiir is a significant difference (based on a p-value threshold and a fold-change threshold) and associate a letter: 'o'=more opened compared to the reference group, 'c'=more closed compared to the reference group, and 'n'=no significant differences. The reference group is define during DESeq analysis (cf.corresponding folder on GitHub). Function: **classification(data, p_comparisons, fc_comparisons, p=0.01, fc=math.log2(1.5))** \
+- data: dataset containing the chromatin regions ('chr:start-end') and the DESeq results (p-values and fold-change) for each time comparisons. The function will create a new columns to this dataset containing the 'opening profils'
+- p_comparisons: list of the columns containing the p-value of the different time-comparisons
+- fc_comparisons: list of the columns containing the fold-change of the different time-comparisons
+- p: p-value threshold of significance (significant if p-value < threshold), the default value is 0.01.
+- fc: fold-change
 
 
 
