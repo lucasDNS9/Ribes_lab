@@ -58,6 +58,7 @@ This function associate the chromatin regions (from the DORs list) and the two c
 Apply the function the the DORs from the differents comparisons and save the results as new tables.
 
 ## timecomp.py
+This code is used to represente the chromatin opening modification during development, comparing the ATACseq signal (rpkm) between different timepoints.
 #### Section 1: Import
 - Import required packages
 - Define working directory
@@ -78,7 +79,18 @@ Arguments:
 #### Section 4: Graphs
 Define the graphical function to draw lineplots for each profil, representing the median±sd rpkm. The function save automatically the graphs in the working directory (here 18 graphs). Function: **plotting_profils(DORs_plot)**, the argument DORs_plot is the dataset generated in **section 3** containing the chromatin region as the row indexes, the average rpkm for the different timepoint (here day 0, day 4 and day 7), and a column with the opening profils.
 
-## ...
+## highlight_timeplot.py
+This code is used to highlight selected chromatin regions in the profil plots representing the chromatin opening changes during development (comparisons of ATACseq signal between different timepoints). Here, i want to highlight the chromatin regions nearby genes identified in the RNAseq analysis, but this code can be used to highlight any chromatin regions from a given list in the profil plots.
+#### Section 1: Import
+- Import the required packages
+- Define the working directory
+- Import the dataset containing the chromatin regions differentially open (DORs) during development (time-comparisons) and set the chromatin region location as the row indexes.
+- Import the DORs between homozygous and wild-type in BMP conditions (Here, I want to highlight in these regions the one nearby Differentially Expressed Genes (DEGs) identified in RNAseq analysis.
+- Import the DEGs from RNAseq analysis
+- 
+
+#### Section 2: Plotting function
+
 
 
 
