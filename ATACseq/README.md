@@ -71,8 +71,12 @@ Arguments:
 - fc_comparisons: list of the columns containing the fold-change of the different time-comparisons
 - p: p-value threshold of significance (significant if p-value < threshold), the default value is 0.01.
 - fc: fold-change threshold (significant if fold-change > threshold or < -threshold), the default value is 1.5. The DESeq results give the $log2(fold change)$, it's taken into account in the function.
-  
-
-
+#### Section 3: Analysis and processing
+- Print the number of regions for each profils
+- Remove the aberrant profils from the classification, for exemple: '1o2n3c','1o2o3n', and '1c2n3o'
+- Process the data for graphical representation: set the 'chr:start-end' column as the row indexes, only keep the columns with the average rpkm and the profils
+#### Section 4: Graphs
+Define the graphical function to draw lineplots for each profil, representing the median±sd rpkm. The function save automatically the graphs in the working directory (here 18 graphs). Function: **plotting_profils(DORs_plot)**, the argument DORs_plot is the dataset generated in **section 3** containing the chromatin region as the row indexes, the average rpkm for the different timepoint (here day 0, day 4 and day 7), and a column with the opening profils.
+#### Section 5: 
 
 
