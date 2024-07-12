@@ -77,7 +77,9 @@ Arguments:
 - Process the data for graphical representation: set the 'chr:start-end' column as the row indexes, only keep the columns with the average rpkm and the profils
 #### Section 4: Graphs
 Define the graphical function to draw lineplots for each profil, representing the median±sd rpkm. The function save automatically the graphs in the working directory (here 18 graphs). Function: **plotting_profils(DORs_plot)**, the argument DORs_plot is the dataset generated in **section 3** containing the chromatin region as the row indexes, the average rpkm for the different timepoint (here day 0, day 4 and day 7), and a column with the opening profils.
-#### Section 5: Profils plots with highlighted region
+
+## ...
+
 
 
 
