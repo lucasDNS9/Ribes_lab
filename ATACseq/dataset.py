@@ -17,7 +17,7 @@ from filtering import filter_rpkm, filter_pvalue_fc
 os.chdir('/Users/lucasdenis/Desktop/ATACseq')
 
 #import dataset
-ATACseq_data = pd.read_csv('./data_ATACseq.csv', sep=';', decimal='.')
+ATACseq_data = pd.read_csv('./data/data_ATACseq.csv', sep=';', decimal='.')
 
 ###############################################################################
 '''
