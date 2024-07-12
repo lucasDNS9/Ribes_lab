@@ -87,10 +87,15 @@ This code is used to highlight selected chromatin regions in the profil plots re
 - Import the dataset containing the chromatin regions differentially open (DORs) during development (time-comparisons) and set the chromatin region location as the row indexes.
 - Import the DORs between homozygous and wild-type in BMP conditions (Here, I want to highlight in these regions the one nearby Differentially Expressed Genes (DEGs) identified in RNAseq analysis.
 - Import the DEGs from RNAseq analysis
-- 
+- Subset the chromatin regions nearby the genes contains in the list of DEGs
+This section can be modify to extract among all the genes nearby chromatin region dynamic during development genes that are in a specified list.
 
 #### Section 2: Plotting function
-
+This code is used to represente the chromatin opening modification during development, comparing the ATACseq signal (rpkm) between different timepoints, and highlight the chromatin regions nearby specified genes (here, the genes that were identified in the RNAseq analysis). Function: **plotting_profils_list(DORs_plot, list_regions)**. \
+Arguments:
+- DORs_plot: dataset containing the chromatin region location (row indexes), the average rpkm for the different timepoints, and the opening profils. 
+- list_regions: list of chromatin regions to highlight
+This function can be adjusted according to the specificities of your data (different timepoints ...)
 
 
 
